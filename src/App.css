@@ -1,22 +1,48 @@
-.App {
-  text-align: center;
+/* .slides-show {
+  border: 2px solid red;
+  overflow: hidden;
+  width: 1200px;
+  height: 400px;
+  margin: 20px auto;
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
+#slides {
+  width: 1200px;
+  height: 400px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+*/
+/* .slides-inner {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  position: absolute;
+  transform: translate3d(-1200px, 0, 0);
 }
 
-.App-link {
-  color: #09d3ac;
+.slides-inner-tranform-1 {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate3d(1 * -1200px, 0, 0);
 }
+
+.slides-inner-tranform-2 {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate3d(2 * -1200px, 0, 0);
+}
+
+.slides-inner-tranform-3 {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate3d(3 * -1200px, 0, 0);
+}
+
+.slides-inner-tranform-4 {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  transform: translate3d(4 * -1200px, 0, 0);
+} */
