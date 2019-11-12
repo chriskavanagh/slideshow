@@ -4,6 +4,7 @@ import bee from "../images/bee-1200-400.jpg";
 import beetle from "../images/beetle-1200-400.jpg";
 import dandy from "../images/dandelion-1200-400.jpg";
 import lady from "../images/ladybug-1200-400.jpg";
+//import IMG from "./IMG";
 
 const SlidesDiv = styled.div`
   border: 2px solid red;
@@ -18,6 +19,7 @@ const InnerDiv = styled.div`
   display: flex;
   flex-direction: row;
   position: absolute;
+  transition: 1000ms;
 
   ${({ index }) => {
     console.log(index);
@@ -34,10 +36,6 @@ class Slide extends Component {
     this.state = {
       index: 0
     };
-    this.img1 = React.createRef();
-    this.img2 = React.createRef();
-    this.img3 = React.createRef();
-    this.img4 = React.createRef();
   }
 
   componentDidMount() {
@@ -57,34 +55,10 @@ class Slide extends Component {
     return (
       <SlidesDiv>
         <InnerDiv index={index}>
-          <img
-            ref={this.img1}
-            src={bee}
-            width={1200}
-            height={400}
-            alt="beatle"
-          />
-          <img
-            ref={this.img2}
-            src={beetle}
-            width={1200}
-            height={400}
-            alt="beatle"
-          />
-          <img
-            ref={this.img3}
-            src={dandy}
-            width={1200}
-            height={400}
-            alt="dandy"
-          />
-          <img
-            ref={this.image4}
-            src={lady}
-            width={1200}
-            height={400}
-            alt="lady"
-          />
+          <img src={bee} width={1200} height={400} alt="beatle" />
+          <img src={beetle} width={1200} height={400} alt="beatle" />
+          <img src={dandy} width={1200} height={400} alt="dandy" />
+          <img src={lady} width={1200} height={400} alt="lady" />
         </InnerDiv>
       </SlidesDiv>
     );
