@@ -1,21 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
-class IMG extends Component {
-  constructor(props) {
-    super(props);
-    this.img1 = React.createRef();
-  }
-  render() {
-    return (
-      <img
-        ref={this.ref}
-        src={this.props.src}
-        width={this.props.width}
-        height={this.props.height}
-        alt="beatle"
-      />
-    );
-  }
-}
+const IMG = ({ property }) => {
+  const { index, src, alt } = property;
+  return (
+    <div id={`image-${index}`} className="image">
+      <img src={src} width={1200} height={400} alt={alt} />
+    </div>
+  );
+};
 
 export default IMG;

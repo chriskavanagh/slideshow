@@ -1,10 +1,8 @@
 import React, { Component } from "react";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
-import bee from "../images/bee-1200-400.jpg";
-import beetle from "../images/beetle-1200-400.jpg";
-import dandy from "../images/dandelion-1200-400.jpg";
-import lady from "../images/ladybug-1200-400.jpg";
-//import IMG from "./IMG";
+import IMG from "./IMG";
+import uuid from "react-uuid";
 
 const SlidesDiv = styled.div`
   border: 2px solid red;
@@ -15,11 +13,10 @@ const SlidesDiv = styled.div`
   position: relative;
 `;
 
-const InnerDiv = styled.div`
+/* const InnerDiv = styled.div`
   display: flex;
   flex-direction: row;
   position: absolute;
-  transition: 1000ms;
 
   ${({ index }) => {
     console.log(index);
@@ -28,17 +25,24 @@ const InnerDiv = styled.div`
     if (index === 2) return `transform: translate3d(${index * -1200}px, 0, 0)`;
     if (index === 3) return `transform: translate3d(${index * -1200}px, 0, 0)`;
   }}
+`; */
+
+const InnerDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  position: absolute;
 `;
 
 class Slide extends Component {
-  constructor(props) {
+  /* constructor(props) {
     super(props);
     this.state = {
-      index: 0
+      appearHome: true,
+      property: data.properties[0]
     };
-  }
+  } */
 
-  componentDidMount() {
+  /* componentDidMount() {
     let index = 0;
     setInterval(() => {
       index += 1;
@@ -47,20 +51,23 @@ class Slide extends Component {
         index = 0;
         this.setState({ index: index });
       }
-    }, 2000);
-  }
+    }, 4000);
+  } */
 
   render() {
-    const { index } = this.state;
+    // const { appearHome, property } = this.state;
     return (
-      <SlidesDiv>
-        <InnerDiv index={index}>
-          <img src={bee} width={1200} height={400} alt="beatle" />
-          <img src={beetle} width={1200} height={400} alt="beatle" />
-          <img src={dandy} width={1200} height={400} alt="dandy" />
-          <img src={lady} width={1200} height={400} alt="lady" />
-        </InnerDiv>
-      </SlidesDiv>
+      <>
+        <SlidesDiv>
+          <InnerDiv>
+            <TransitionGroup className="card-container">
+              <CSSTransition key={uuid()} timeout={500} classNames="slide">
+                <IMG property={this.props.property} />
+              </CSSTransition>
+            </TransitionGroup>
+          </InnerDiv>
+        </SlidesDiv>
+      </>
     );
   }
 }
