@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CSSTransition } from "react-transition-group";
+import Transition from "./components/Transition";
+import Navbar from "./components/Navbar";
 import Slide from "./components/Slider";
 import styled from "styled-components";
 import data from "./data/data";
@@ -11,12 +13,12 @@ const ButtonsDiv = styled.div`
 `;
 
 function App() {
-  const [inProp, setInProp] = useState(false);
-  const [appearHome, setAppearHome] = useState(true);
+  /* const [inProp, setInProp] = useState(false);
+  // const [appearHome, setAppearHome] = useState(true);
   const [property, setProperty] = useState(data.properties[0]);
 
   const nextProperty = () => {
-    setInProp(true);
+    setInProp(!inProp);
     const newIndex = property.index + 1;
     setProperty(data.properties[newIndex]);
   };
@@ -24,7 +26,7 @@ function App() {
   const prevProperty = () => {
     const newIndex = property.index - 1;
     setProperty(data.properties[newIndex]);
-  };
+  }; */
 
   /* useEffect(() => {
     const interval = setInterval(() => {
@@ -36,23 +38,7 @@ function App() {
 
   return (
     <div className="App">
-      <CSSTransition in={inProp} appear={true} timeout={500} classNames="fade">
-        <Slide property={property} />
-      </CSSTransition>
-      <ButtonsDiv className="buttons">
-        <button onClick={() => this.toggleAppear()}>
-          Appear: {`${appearHome}`}
-        </button>
-        <button
-          onClick={() => nextProperty()}
-          disabled={property.index === data.properties.length - 1}
-        >
-          Next
-        </button>
-        <button onClick={() => prevProperty()} disabled={property.index === 0}>
-          Prev
-        </button>
-      </ButtonsDiv>
+      <Navbar />
     </div>
   );
 }

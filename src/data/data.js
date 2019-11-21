@@ -11,4 +11,5 @@ const data = {
     { index: 3, src: lady, alt: "lady" }
   ]
 };
+
 export default data;
