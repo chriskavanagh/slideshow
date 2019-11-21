@@ -57,7 +57,7 @@ const UL = styled.ul`
     pointer-events: none;
 
     ${({ open }) => {
-      if (open === true) return `clip-path: circle(1000px at 90% -10%)`;
+      if (open === true) return `clip-path: circle(1500px at 90% -10%)`;
       if (open === true) return `pointer-events: all`;
     }}
   }
@@ -71,7 +71,7 @@ const Navbar = props => {
     setOpen(!open);
   };
 
-  const pages = ["about", "contact", "projects"];
+  const pages = ["/About", "/Contact", "/Projects"];
 
   return (
     <>
@@ -82,9 +82,9 @@ const Navbar = props => {
           <div className="line"></div>
         </Hamburger>
         <UL open={open}>
-          {pages.map(page => (
-            <li className={open ? "fade" : ""}>
-              <a href="/{page}">{page.toUpperCase()}</a>
+          {pages.map((page, i) => (
+            <li className={open ? "fade" : ""} key={i}>
+              <a href={page.toLowerCase()}>{page.split("/")}</a>
             </li>
           ))}
         </UL>

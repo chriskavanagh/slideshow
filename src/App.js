@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { CSSTransition } from "react-transition-group";
-import Transition from "./components/Transition";
+//import { CSSTransition } from "react-transition-group";
+//import Transition from "./components/Transition";
 import Navbar from "./components/Navbar";
-import Slide from "./components/Slider";
+//import Slide from "./components/Slider";
 import styled from "styled-components";
-import data from "./data/data";
+//import data from "./data/data";
 import "./App.css";
 
-const ButtonsDiv = styled.div`
+/* const ButtonsDiv = styled.div`
   display: flex;
   justify-content: center;
-`;
+`; */
 
 function App() {
   /* const [inProp, setInProp] = useState(false);
