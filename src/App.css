@@ -225,7 +225,7 @@
   /* .landing {
     flex-direction: column;
   } */
-  .non--fade {
+  /*  .non--fade {
     opacity: 0;
   }
   .nav-links li a {
@@ -242,7 +242,7 @@
   }
   li.fade {
     opacity: 1;
-  }
+  } */
 }
 /* end Navbar */
 

@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import circles from "../circles.svg";
+import { NavLink } from "react-router-dom";
 
 const Nav = styled.nav`
   height: 10vh;
   background: #5b78c7;
-
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
 
   @media screen and (max-width: 768px) {
     position: relative;
@@ -45,12 +40,6 @@ const UL = styled.ul`
   margin-left: auto;
   background-color: coral;
 
-  a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-  }
-
   @media screen and (max-width: 768px) {
     position: fixed;
     background: #5b78c7;
@@ -58,9 +47,27 @@ const UL = styled.ul`
     width: 100%;
     flex-direction: column;
     clip-path: circle(100px at 90% -10%);
-    -webkit-clip-path: circle(100px at 90% -10%);
     transition: all 1s ease-out;
     pointer-events: none;
+
+    li.non--fade {
+      opacity: 0;
+    }
+    .nav-links li a {
+      font-size: 25px;
+    }
+    li:nth-child(1) {
+      transition: all 0.5s ease 0.2s;
+    }
+    li:nth-child(2) {
+      transition: all 0.5s ease 0.4s;
+    }
+    li:nth-child(3) {
+      transition: all 0.5s ease 0.6s;
+    }
+    li.fade {
+      opacity: 1;
+    }
 
     ${({ open }) => {
       if (open === true) return `clip-path: circle(1200px at 90% -10%)`;
@@ -86,15 +93,28 @@ const StyledSection = styled.section`
   }
 `;
 
+const StyledLink = styled(NavLink)`
+  padding: 5px 5px 5px 5px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  font-family: Roboto;
+  font-size: 20px;
+  :hover,
+  :active {
+    color: #fa923f;
+    background: gray;
+  }
+`;
+
 const Navbar = props => {
   const [open, setOpen] = useState(false);
-  console.log(open);
 
   const toggleCollapse = () => {
     setOpen(!open);
   };
 
-  const pages = ["/About", "/Contact", "/Projects"];
+  const pages = ["About", "Contact", "Projects"];
 
   return (
     <>
@@ -107,7 +127,7 @@ const Navbar = props => {
         <UL open={open}>
           {pages.map((page, i) => (
             <li className={open ? "fade" : "non--fade"} key={i}>
-              <a href={page.toLowerCase()}>{page.split("/")}</a>
+              <StyledLink to={`/${page.toLowerCase()}`}>{page}</StyledLink>
             </li>
           ))}
         </UL>
