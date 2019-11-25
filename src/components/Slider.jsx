@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import styled from "styled-components";
-import IMG from "./IMG";
 import uuid from "react-uuid";
+import IMG from "./IMG";
 
 const SlidesDiv = styled.div`
   border: 2px solid red;

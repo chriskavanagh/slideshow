@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import circles from "../circles.svg";
 import { NavLink } from "react-router-dom";
 
 const Nav = styled.nav`
@@ -76,23 +75,6 @@ const UL = styled.ul`
   }
 `;
 
-const StyledSection = styled.section`
-  height: 90vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  h1 {
-    margin: 100px;
-    font-size: 50px;
-    color: #ae5fce;
-  }
-
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
 const StyledLink = styled(NavLink)`
   padding: 5px 5px 5px 5px;
   color: #fff;
@@ -107,6 +89,7 @@ const StyledLink = styled(NavLink)`
   }
 `;
 
+// Navbar Component
 const Navbar = props => {
   const [open, setOpen] = useState(false);
 
@@ -132,11 +115,6 @@ const Navbar = props => {
           ))}
         </UL>
       </Nav>
-
-      <StyledSection className="landing">
-        <img src={circles} alt="dots" />
-        <h1>Dots</h1>
-      </StyledSection>
     </>
   );
 };
