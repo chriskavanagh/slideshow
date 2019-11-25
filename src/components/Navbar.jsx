@@ -18,7 +18,7 @@ const Hamburger = styled.div`
     right: 5%;
     top: 50%;
     transform: translate(-5%, -50%);
-    z-index: 2;
+    z-index: 2000;
 
     .line {
       width: 30px;
@@ -48,6 +48,7 @@ const UL = styled.ul`
     clip-path: circle(100px at 90% -10%);
     transition: all 1s ease-out;
     pointer-events: none;
+    z-index: 1000;
 
     li.non--fade {
       opacity: 0;

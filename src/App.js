@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 //import { CSSTransition } from "react-transition-group";
 //import Transition from "./components/Transition";
 import Navbar from "./components/Navbar";
-import Slide from "./components/Slider";
+//import Slide from "./components/Slider";
+import ResponsiveImage from "./components/Carousel";
 import styled from "styled-components";
 import data from "./data/data";
 import Main from "./components/Main";
@@ -44,7 +45,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Slide property={property} />
+      <ResponsiveImage property={property} />
       <Main />
     </div>
   );
