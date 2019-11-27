@@ -1,7 +1,7 @@
 import React from "react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
-import styled from "styled-components";
 import uuid from "react-uuid";
+import styled from "styled-components";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 const Outerdiv = styled.div`
   position: relative;
@@ -10,6 +10,11 @@ const Outerdiv = styled.div`
   flex-direction: row;
   align-items: center;
   margin: 0.5px auto;
+  border-top: 10px solid lightgray;
+`;
+
+const Innerdiv = styled.div`
+  padding-bottom: 43%;
 `;
 
 const Img = styled.img`
@@ -23,13 +28,13 @@ const Img = styled.img`
   /* height: auto; or 100% */
 `;
 
-const ResponsiveImage = ({ property }) => {
-  const { src, alt } = property;
+const Carousel = ({ property: { src, alt } }) => {
+  //const { src, alt } = property;
   return (
     <Outerdiv style={{ width: "1400px" }}>
-      <div style={{ paddingBottom: "43%" }} />
+      <Innerdiv />
       <TransitionGroup>
-        <CSSTransition key={uuid()} timeout={500} classNames="slide">
+        <CSSTransition key={uuid()} timeout={1500} classNames="slide">
           <Img src={src} alt={alt} />
         </CSSTransition>
       </TransitionGroup>
@@ -37,4 +42,4 @@ const ResponsiveImage = ({ property }) => {
   );
 };
 
-export default ResponsiveImage;
+export default Carousel;

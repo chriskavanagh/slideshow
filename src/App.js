@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 //import Transition from "./components/Transition";
 import Navbar from "./components/Navbar";
 //import Slide from "./components/Slider";
-import ResponsiveImage from "./components/Carousel";
+import Carousel from "./components/Carousel";
 import styled from "styled-components";
 import data from "./data/data";
 import Main from "./components/Main";
@@ -16,7 +16,6 @@ import "./App.css";
 
 function App() {
   const [inProp, setInProp] = useState(false);
-  // const [appearHome, setAppearHome] = useState(true);
   const [property, setProperty] = useState(data.properties[0]);
 
   const nextProperty = () => {
@@ -45,7 +44,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <ResponsiveImage property={property} />
+      <Carousel property={property} />
       <Main />
     </div>
   );

@@ -1,15 +1,8 @@
 import React from "react";
 
-const IMG = ({ property }) => {
-  const { index, src, alt } = property;
-  const height = 400;
-  const width = 1200;
-
+const IMG = ({ property: { src, alt } }) => {
   return (
-    <div
-      style={{ paddingBottom: (height / width) * 100 + "%" }}
-      className="img--wrapper"
-    >
+    <div>
       <img src={src} alt={alt} className="slider--img" />
     </div>
   );

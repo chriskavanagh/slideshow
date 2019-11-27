@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import circles from "../circles.svg";
+import smCircles from "../circles-small.svg";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
@@ -19,10 +20,25 @@ const StyledSection = styled.section`
   }
 `;
 
-const Main = () => {
+const Main = props => {
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  });
+
+  if (width > 768) {
+    return (
+      <StyledSection className="landing">
+        <img src={circles} alt="dots" className="circles" />
+        <h1>Dots</h1>
+      </StyledSection>
+    );
+  }
+
   return (
     <StyledSection className="landing">
-      <img src={circles} alt="dots" />
+      <img src={smCircles} alt="dots" className="small-circles" />
       <h1>Dots</h1>
     </StyledSection>
   );
